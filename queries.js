@@ -57,7 +57,7 @@ const createUser = (request, response) => {
     const { name, email, comment } = request.body
   
     pool.query(
-      'UPDATE users SET name = $1, email = $2, comment = $3 WHERE id = $4',
+      'UPDATE comments SET name = $1, email = $2, comment = $3 WHERE id = $4',
       [name, email, comment, id],
       (error, results) => {
         if (error) {
@@ -71,7 +71,7 @@ const createUser = (request, response) => {
   const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
   
-    pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
+    pool.query('DELETE FROM comments WHERE id = $1', [id], (error, results) => {
       if (error) {
         throw error
       }
