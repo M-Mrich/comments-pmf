@@ -3,7 +3,7 @@ const db = require('./queries')
 const app = express();
 const PORT = process.env.PORT || 3000
 const cors = require("cors");
-require('dotenv').config();
+//require('dotenv').config();
 app.use(cors({
     origin:"*",
     methods:["GET","POST","PUT","DELETE"]
