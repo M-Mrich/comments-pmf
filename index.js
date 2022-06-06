@@ -17,9 +17,7 @@ app.get('/', (request, response) => {
  //endpoints  to USERS table
  app.get('/comments', db.getUsers)
  app.get('/comments/:id', db.getUserById)
- app.post('/comments',bodyParser.urlencoded({
-    extended:true,
-}), db.createUser)
+ app.post('/comments'), db.createUser)
  app.put('/comments/:id', db.updateUser)
  app.delete('/comments/:id', db.deleteUser)
 
